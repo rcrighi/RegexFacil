@@ -15,6 +15,7 @@ namespace Regex
         public static string URL = @"^((http)|(https)|(ftp)):\/\/([\- \w]+\.)+\w{2,3}(\/ [%\-\w]+(\.\w{2,})?)*$";
         public static string IP = @"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b";
         public static string DATA = @"^((0[1-9]|[12]\d)\/(0[1-9]|1[0-2])|30\/(0[13-9]|1[0-2])|31\/(0[13578]|1[02])) \/\d{4}$";
+        public static string CEP = @"\d{5}-?\d{3}";
 
 
     }
