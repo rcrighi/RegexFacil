@@ -8,6 +8,7 @@ namespace Regex
 {
     public static class PatternRegex
     {
+
         public static string CPF = @"\d{3}\.\d{3}\.\d{3}\-\d{2}";
         public static string CNPJ = @"[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}";
         public static string TELEFONE = @"[(]?\d{2}[)]?\s*[1-9]?\d{4}-?\d{4}";
@@ -16,6 +17,8 @@ namespace Regex
         public static string IP = @"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b";
         public static string DATA = @"^((0[1-9]|[12]\d)\/(0[1-9]|1[0-2])|30\/(0[13-9]|1[0-2])|31\/(0[13578]|1[02])) \/\d{4}$";
         public static string CEP = @"\d{5}-?\d{3}";
+
+        
 
 
     }

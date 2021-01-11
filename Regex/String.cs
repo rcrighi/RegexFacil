@@ -17,7 +17,7 @@ namespace Regex
             return str.Split(new char[] { ' ', '.', '?' }, StringSplitOptions.RemoveEmptyEntries).Length;
         }
 
-        public static string[] Regex(this String str, string PatternRegex)
+        public static string[] Regex(cthis String str, string PatternRegex)
         {
             System.Text.RegularExpressions.Regex rx = new System.Text.RegularExpressions.Regex(PatternRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
@@ -30,6 +30,23 @@ namespace Regex
                 result[i] = matches[i].Value;
             }
                 return result;
+        }
+
+        public static Dictionary<string, string> CampoFormulario(this String str, string Campo, int TamanhoCampo)
+        {
+            string PatternRegex = @"\b(" + Campo + ") (.{" + TamanhoCampo + "})";
+            Dictionary<string, string> result = new Dictionary<string, string>();
+
+            System.Text.RegularExpressions.Regex rx = new System.Text.RegularExpressions.Regex(PatternRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            MatchCollection matches = rx.Matches(str);
+
+            foreach (Match item in matches)
+            {
+                result.Add(item.Groups[0].Value, item.Groups[1].Value);
+            }
+           
+            return result;
         }
     }
 }
